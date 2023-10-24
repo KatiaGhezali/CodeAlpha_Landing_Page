@@ -1,0 +1,282 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Creepster', cursive;
+    box-sizing: border-box;
+}
+
+section {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    background: url('pictures/hall.png') no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+header {
+    position: relative;
+    top: 0;
+    width: 100%;
+    padding: 30px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo {
+    position: relative;
+    font-size: 40px;
+    text-decoration: none;
+    letter-spacing: 1px;
+}
+
+header .navbar a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: large;
+    letter-spacing: 1px;
+    padding: 3px 18px;
+}
+
+header .navbar a:not(:last-child){
+    margin-right: 30px;
+}
+
+
+header .navbar a:hover {
+    color: #db4a2b;
+}
+
+.container {
+    max-width: 650px;
+    margin: 60px 100px;
+}
+
+.container .hero h1 {
+    color: #db4a2b ;
+    font-size: 55px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    line-height: 50px;
+    margin-bottom: 30px;
+
+}
+
+.container .hero p {
+    color: #fff ;
+    font-size: 18px;
+    font-weight: 300;
+    margin-bottom: 40px;
+   
+
+}
+
+.container .hero p span {
+    color: #db4a2b ;
+   
+   
+
+}
+
+.container .btn {
+    color: #fff;
+    background: #db4a2b;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 10px 20px;
+    border-radius: 5px;
+
+}
+
+.container .btn:hover {
+  
+    background: #99331E;
+ 
+
+}
+
+.socials  {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+.socials a {
+    position: relative;
+    color: #fff;
+    font-size: 35px;
+}
+
+.socials a:not(:last-child) {
+    margin-right: 50px;
+}
+
+.socials a:hover {
+    
+    color: #db4a2b;
+    transform: scale(1.25);
+}
+label{
+    display: none;
+  }
+
+#check{
+    z-index: 3;
+    display: none;
+  }
+  
+  
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100vh;
+    background: #db7a2b;
+    padding-top: 80px;
+    text-align: center;
+    transition: right 0.3s ease;
+}
+
+.sidebar.active {
+    right: 0;
+    left: 0;
+}
+
+.sidebar a {
+    color: #fff;
+    font-size: 24px;
+    text-decoration: none;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: #fff;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+
+@media (max-width: 960px) {
+
+    
+    header .navbar {
+      display: none;
+    }
+    
+    label {
+        display: block;
+        font-size: 25px;
+        cursor: pointer;
+        color: #fff;
+        transition: 0.3s;
+        transition-property: color;
+    }
+ 
+
+    label:hover{
+        color: #db4a2b;
+    }
+    
+
+    label .close-btn {
+        display: none;
+    }
+
+      #check:checked ~ header .navbar {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: #db7a2b;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 2;
+    }
+
+    #check:not(:checked) ~ header .navbar {
+        display: none;
+    }
+
+    #check:checked ~ header .navbar a {
+        margin: 20px 0;
+    }
+
+    #check:checked ~ header label .close-btn {
+        display: block;
+    }
+
+    #check:not(:checked) ~ header label .menu-btn {
+        display: block;
+    }
+
+    #check:checked ~ header label .menu-btn {
+        display: none;
+    }
+
+     label .menu-btn {
+        position: absolute;
+     }
+
+     label .logo {
+        position: absolute;
+        bottom: -6px;
+     }
+
+     .container .hero h1 {
+        font-size: 45px;
+        line-height: 50px;
+     }
+ 
+     .container .hero h1 span{
+        font-size: 40px;
+        font-weight: 600;
+     }
+
+     .container .hero p{
+        font-size: 14px;
+       
+     }
+ 
+
+}
+
+@media (max-width: 560px) {
+
+    
+  
+    
+
+     .container .hero h1 {
+        font-size: 35px;
+        line-height: 40px;
+     }
+ 
+     .container .hero h1 span{
+        font-size: 30px;
+        font-weight: 600;
+     }
+
+     .container .hero p{
+        font-size: 14px;
+       
+     }
+     
+ 
+
+}
